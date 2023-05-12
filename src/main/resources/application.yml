@@ -1,0 +1,61 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/woniubookshop03?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    #password: Woniu@110
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initialSize: 10
+      maxActive: 30
+      minIdle: 5
+      maxWait: 2000
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+  redis:
+    host: 192.168.174.101
+    port: 6379
+    jedis:
+      pool:
+        max-active: 30
+        max-idle: 10
+        min-idle: 3
+        max-wait: 3000
+  mail:
+    host: smtp.qq.com
+    username: 853818394@qq.com  #?????
+    password: yqmlnjgthxmnbbej # ????? ?????
+    default-encoding: utf-8
+    port: 465
+    properties:
+      mail:
+        debug: true
+        smtp:
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirm-type: correlated  #??confirm??
+    publisher-returns: true   #??return??
+    listener:
+      simple:
+        acknowledge-mode: manual  #????ack
+  jackson:  #?????????
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+
+mybatis-plus:
+  # mapper.xml ????
+  mapper-locations: classpath*:/mapper/**/*.xml
+  # type??????
+  type-aliases-package: com.woniu
+  # ???
+  configuration:
+    # ?????????????,?????false
+    map-underscore-to-camel-case: false
+    # ?????????sql??
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
