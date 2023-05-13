@@ -4,9 +4,14 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.woniu.demo</groupId>
     <artifactId>weekTestDemo</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>weekTestDemo</name>
     <description>weekTestDemo</description>
+    <modules>
+        <module>bookTypeDemo</module>
+        <module>rabbitMqDemo</module>
+    </modules>
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
